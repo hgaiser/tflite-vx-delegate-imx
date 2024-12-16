@@ -316,7 +316,7 @@ struct OpMapperBase : public vx::op_map::IOpMapper {
         if ((context->tensors[input_index].dims->data[j] > 65535) && (j > 0)) {
           TFLITE_LOG_PROD(TFLITE_LOG_ERROR,
                           "vx-delegate doesn't support tensor height/width > "
-                          "65535");
+                          "65535 for op %s", context->tensors[input_index].name);
           return false;
         }
       }
